@@ -2,5 +2,5 @@
 ../Src/LED_test.c:20:6:led_toggle	16	static
 ../Src/LED_test.c:27:6:sw_init	16	static
 ../Src/LED_test.c:34:9:sw_read	16	static
-../Src/LED_test.c:40:6:delay	16	static
-../Src/LED_test.c:44:6:led_test	24	static
+../Src/LED_test.c:43:6:delay	16	static
+../Src/LED_test.c:47:6:led_test	32	static

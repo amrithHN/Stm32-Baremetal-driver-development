@@ -37,6 +37,9 @@ uint8_t sw_read(GPIO_Reg_Def* pGPIOx,uint8_t pin){
 
 }
 
+
+
+
 void delay(){
 	for(uint32_t i=0;i<300000;i++);
 }
@@ -44,24 +47,38 @@ void delay(){
 void led_test(){
 	// PD12,13,14,15 are leds PA0 is push button
 
-	GPIO_handle_t pGPIO_handle ;
-	pGPIO_handle.pGPIOx=GPIOD;
-	pGPIO_handle.pin_config.pin_number = 12;
+	GPIO_handle_t led ,button;
+	led.pGPIOx=GPIOD;
+	led.pin_config.pin_number = 12;
 
-	pGPIO_handle.pin_config.pin_mode = OUTPUT;
-	pGPIO_handle.pin_config.pin_output_mode = OUTPUT_PUSHPULL;
-	pGPIO_handle.pin_config.pin_input_mode = NOPULL;
-	pGPIO_handle.pin_config.pin_speed = LOW;
+	led.pin_config.pin_mode = OUTPUT;
+	led.pin_config.pin_output_mode = OUTPUT_PUSHPULL;
+	led.pin_config.pin_input_mode = NOPULL;
+	led.pin_config.pin_speed = LOW;
+
+
+	button.pGPIOx=GPIOA;
+	button.pin_config.pin_number=0;
+
+	button.pin_config.pin_mode=INPUT;
+	button.pin_config.pin_speed=LOW;
+	button.pin_config.pin_input_mode=NOPULL;
+
+
 
 	GPIO_Enable(GPIOD,ENABLE); //enable clock peripheral
+	GPIO_Enable(GPIOA,ENABLE); //enable clock peripheral
 
-	GPIO_init(&pGPIO_handle);
+	GPIO_init(&led);
+	GPIO_init(&button);
 
 	while(1)
 	{
+		if(sw_read(GPIOA,0)==1)
+		{
 		GPIO_toggle_pin(GPIOD, 12);
 		delay();
-
+		}
 	}
 
 }

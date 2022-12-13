@@ -134,7 +134,7 @@ void GPIO_RESET(GPIO_Reg_Def* pGPIOx){
 uint8_t GPIO_read_pin(GPIO_Reg_Def* pGPIOx,uint8_t pin){
 
 	uint32_t mask = 1<<pin;
-	return (pGPIOx->IDR | mask);
+	return (pGPIOx->IDR & mask);
 
 }
 

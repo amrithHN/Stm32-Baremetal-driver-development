@@ -23,7 +23,7 @@ void led_init(GPIO_handle_t*);
 void led_toggle(GPIO_Reg_Def* pGPIOx,uint8_t pin);
 
 
-//push buutton init
+//push button init
 void sw_init(GPIO_handle_t*);
 
 // read push button
