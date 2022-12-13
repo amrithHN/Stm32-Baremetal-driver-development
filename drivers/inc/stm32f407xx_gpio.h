@@ -42,6 +42,9 @@ typedef struct{
 #define OUTPUT   01
 #define ALT_FUNC 02
 #define ANALOG   03
+#define INTERRUPT_FT   04
+#define INTERRUPT_RT   05
+#define INTERRUPT_FRT   06
 
 #define NOPULL   00
 #define PULLUP   01
@@ -61,6 +64,11 @@ typedef struct{
 #define GPIOD_RESET() if(1){ RCC->AHB1_RSTR |= 1<<3; RCC->AHB1_RSTR &= ~(1<<3);  }
 #define GPIOE_RESET() if(1){ RCC->AHB1_RSTR |= 1<<4; RCC->AHB1_RSTR &= ~(1<<4);  }
 
+#define PORT_NUM_MAP(x) ((x == GPIOA)?0: \
+						 (x == GPIOB)?1: \
+						 (x == GPIOC)?2: \
+						 (x == GPIOD)?3: \
+						 (x == GPIOE)?4:0)
 
 /*
  * <GPIO APIs to control them>

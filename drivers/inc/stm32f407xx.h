@@ -267,5 +267,42 @@ typedef struct {
 #define SYSCFG_DI() (RCC->APB2_ENR &=~(1<<14))
 
 
+/*
+ * EXTI Handle structure
+ * --mapping page:382
+ *
+ */
+
+typedef struct {
+
+	__vo32_t EXTI_IMR;
+	__vo32_t EXTI_EMR;
+	__vo32_t EXTI_RTSR;
+	__vo32_t EXTI_FTSR;
+	__vo32_t EXTI_SWIER;
+	__vo32_t EXTI_PR;
+
+}EXTI_handle_t;
+
+#define EXTI ((EXTI_handle_t*)EXTI_BASE_ADDR)
+
+/*
+ * SYSCFG Handle structure
+ * --mapping page:294
+ *
+ */
+
+typedef struct {
+
+	__vo32_t SYSCFG_MEMRMP; //00
+	__vo32_t SYSCFG_PMC; //04
+	__vo32_t SYSCFG_EXTICR[4];//08 0c 10 14
+	uint16_t RESERVED;// 18 -> 20
+	__vo32_t SYSCFG_CMPCR; //20-> 24
+
+}SYSCFG_handle_t;
+
+#define SYSCFG ((SYSCFG_handle_t*)SYSCFG_BASE_ADDR)
+
 
 #endif /* INC_STM3F407XX_H_ */

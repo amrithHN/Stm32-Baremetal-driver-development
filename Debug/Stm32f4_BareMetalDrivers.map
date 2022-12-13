@@ -61,7 +61,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x103 ./Src/main.o
  .debug_macro   0x0000000000000000       0x6a ./Src/main.o
  .debug_macro   0x0000000000000000      0x1df ./Src/main.o
- .debug_macro   0x0000000000000000       0x70 ./Src/main.o
+ .debug_macro   0x0000000000000000       0x88 ./Src/main.o
  .group         0x0000000000000000        0xc ./Src/syscalls.o
  .group         0x0000000000000000        0xc ./Src/syscalls.o
  .group         0x0000000000000000        0xc ./Src/syscalls.o
@@ -284,8 +284,37 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x103 ./drivers/src/stm32f407xx_gpio.o
  .debug_macro   0x0000000000000000       0x6a ./drivers/src/stm32f407xx_gpio.o
  .debug_macro   0x0000000000000000      0x1df ./drivers/src/stm32f407xx_gpio.o
- .debug_macro   0x0000000000000000      0x1fc ./drivers/src/stm32f407xx_gpio.o
- .debug_macro   0x0000000000000000       0x70 ./drivers/src/stm32f407xx_gpio.o
+ .debug_macro   0x0000000000000000      0x20a ./drivers/src/stm32f407xx_gpio.o
+ .debug_macro   0x0000000000000000       0x88 ./drivers/src/stm32f407xx_gpio.o
+ .group         0x0000000000000000        0xc ./drivers/src/stm32f407xx_spi.o
+ .group         0x0000000000000000        0xc ./drivers/src/stm32f407xx_spi.o
+ .group         0x0000000000000000        0xc ./drivers/src/stm32f407xx_spi.o
+ .group         0x0000000000000000        0xc ./drivers/src/stm32f407xx_spi.o
+ .group         0x0000000000000000        0xc ./drivers/src/stm32f407xx_spi.o
+ .group         0x0000000000000000        0xc ./drivers/src/stm32f407xx_spi.o
+ .group         0x0000000000000000        0xc ./drivers/src/stm32f407xx_spi.o
+ .group         0x0000000000000000        0xc ./drivers/src/stm32f407xx_spi.o
+ .text          0x0000000000000000        0x0 ./drivers/src/stm32f407xx_spi.o
+ .data          0x0000000000000000        0x0 ./drivers/src/stm32f407xx_spi.o
+ .bss           0x0000000000000000        0x0 ./drivers/src/stm32f407xx_spi.o
+ .debug_info    0x0000000000000000       0x68 ./drivers/src/stm32f407xx_spi.o
+ .debug_abbrev  0x0000000000000000       0x29 ./drivers/src/stm32f407xx_spi.o
+ .debug_aranges
+                0x0000000000000000       0x18 ./drivers/src/stm32f407xx_spi.o
+ .debug_macro   0x0000000000000000       0x7c ./drivers/src/stm32f407xx_spi.o
+ .debug_macro   0x0000000000000000      0xa78 ./drivers/src/stm32f407xx_spi.o
+ .debug_macro   0x0000000000000000       0x22 ./drivers/src/stm32f407xx_spi.o
+ .debug_macro   0x0000000000000000       0x8e ./drivers/src/stm32f407xx_spi.o
+ .debug_macro   0x0000000000000000       0x51 ./drivers/src/stm32f407xx_spi.o
+ .debug_macro   0x0000000000000000      0x103 ./drivers/src/stm32f407xx_spi.o
+ .debug_macro   0x0000000000000000       0x6a ./drivers/src/stm32f407xx_spi.o
+ .debug_macro   0x0000000000000000      0x1df ./drivers/src/stm32f407xx_spi.o
+ .debug_macro   0x0000000000000000      0x20a ./drivers/src/stm32f407xx_spi.o
+ .debug_line    0x0000000000000000      0x3f5 ./drivers/src/stm32f407xx_spi.o
+ .debug_str     0x0000000000000000     0x470d ./drivers/src/stm32f407xx_spi.o
+ .comment       0x0000000000000000       0x51 ./drivers/src/stm32f407xx_spi.o
+ .ARM.attributes
+                0x0000000000000000       0x2e ./drivers/src/stm32f407xx_spi.o
  .text          0x0000000000000000        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc_nano.a(lib_a-errno.o)
  .data          0x0000000000000000        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc_nano.a(lib_a-errno.o)
  .bss           0x0000000000000000        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc_nano.a(lib_a-errno.o)
@@ -351,6 +380,7 @@ LOAD ./Src/syscalls.o
 LOAD ./Src/sysmem.o
 LOAD ./Startup/startup_stm32f407vgtx.o
 LOAD ./drivers/src/stm32f407xx_gpio.o
+LOAD ./drivers/src/stm32f407xx_spi.o
 START GROUP
 LOAD c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc_nano.a
 LOAD c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libm.a
@@ -382,7 +412,7 @@ LOAD c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.ext
                 0x0000000008000000                g_pfnVectors
                 0x00000000080001a8                . = ALIGN (0x4)
 
-.text           0x00000000080001a8      0x3f8
+.text           0x00000000080001a8      0x568
                 0x00000000080001a8                . = ALIGN (0x4)
  *(.text)
  .text          0x00000000080001a8       0x40 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtbegin.o
@@ -500,91 +530,92 @@ LOAD c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.ext
                 0x000000000800030c      0x100 ./drivers/src/stm32f407xx_gpio.o
                 0x000000000800030c                GPIO_Enable
  .text.GPIO_init
-                0x000000000800040c       0xde ./drivers/src/stm32f407xx_gpio.o
+                0x000000000800040c      0x24c ./drivers/src/stm32f407xx_gpio.o
                 0x000000000800040c                GPIO_init
  .text.GPIO_read_pin
-                0x00000000080004ea       0x2e ./drivers/src/stm32f407xx_gpio.o
-                0x00000000080004ea                GPIO_read_pin
+                0x0000000008000658       0x2e ./drivers/src/stm32f407xx_gpio.o
+                0x0000000008000658                GPIO_read_pin
  .text.GPIO_toggle_pin
-                0x0000000008000518       0x28 ./drivers/src/stm32f407xx_gpio.o
-                0x0000000008000518                GPIO_toggle_pin
+                0x0000000008000686       0x28 ./drivers/src/stm32f407xx_gpio.o
+                0x0000000008000686                GPIO_toggle_pin
+ *fill*         0x00000000080006ae        0x2 
  .text.__libc_init_array
-                0x0000000008000540       0x48 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc_nano.a(lib_a-init.o)
-                0x0000000008000540                __libc_init_array
+                0x00000000080006b0       0x48 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libc_nano.a(lib_a-init.o)
+                0x00000000080006b0                __libc_init_array
  *(.glue_7)
- .glue_7        0x0000000008000588        0x0 linker stubs
+ .glue_7        0x00000000080006f8        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x0000000008000588        0x0 linker stubs
+ .glue_7t       0x00000000080006f8        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x0000000008000588        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtbegin.o
+ .eh_frame      0x00000000080006f8        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtbegin.o
  *(.init)
- .init          0x0000000008000588        0x4 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crti.o
-                0x0000000008000588                _init
- .init          0x000000000800058c        0x8 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtn.o
+ .init          0x00000000080006f8        0x4 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crti.o
+                0x00000000080006f8                _init
+ .init          0x00000000080006fc        0x8 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtn.o
  *(.fini)
- .fini          0x0000000008000594        0x4 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crti.o
-                0x0000000008000594                _fini
- .fini          0x0000000008000598        0x8 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtn.o
-                0x00000000080005a0                . = ALIGN (0x4)
-                0x00000000080005a0                _etext = .
+ .fini          0x0000000008000704        0x4 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crti.o
+                0x0000000008000704                _fini
+ .fini          0x0000000008000708        0x8 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtn.o
+                0x0000000008000710                . = ALIGN (0x4)
+                0x0000000008000710                _etext = .
 
-.vfp11_veneer   0x00000000080005a0        0x0
- .vfp11_veneer  0x00000000080005a0        0x0 linker stubs
+.vfp11_veneer   0x0000000008000710        0x0
+ .vfp11_veneer  0x0000000008000710        0x0 linker stubs
 
-.v4_bx          0x00000000080005a0        0x0
- .v4_bx         0x00000000080005a0        0x0 linker stubs
+.v4_bx          0x0000000008000710        0x0
+ .v4_bx         0x0000000008000710        0x0 linker stubs
 
-.iplt           0x00000000080005a0        0x0
- .iplt          0x00000000080005a0        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtbegin.o
+.iplt           0x0000000008000710        0x0
+ .iplt          0x0000000008000710        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtbegin.o
 
-.rel.dyn        0x00000000080005a0        0x0
- .rel.iplt      0x00000000080005a0        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtbegin.o
+.rel.dyn        0x0000000008000710        0x0
+ .rel.iplt      0x0000000008000710        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtbegin.o
 
-.rodata         0x00000000080005a0        0x0
-                0x00000000080005a0                . = ALIGN (0x4)
+.rodata         0x0000000008000710        0x0
+                0x0000000008000710                . = ALIGN (0x4)
  *(.rodata)
  *(.rodata*)
-                0x00000000080005a0                . = ALIGN (0x4)
+                0x0000000008000710                . = ALIGN (0x4)
 
-.ARM.extab      0x00000000080005a0        0x0
-                0x00000000080005a0                . = ALIGN (0x4)
+.ARM.extab      0x0000000008000710        0x0
+                0x0000000008000710                . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x00000000080005a0                . = ALIGN (0x4)
+                0x0000000008000710                . = ALIGN (0x4)
 
-.ARM            0x00000000080005a0        0x0
-                0x00000000080005a0                . = ALIGN (0x4)
-                0x00000000080005a0                __exidx_start = .
+.ARM            0x0000000008000710        0x0
+                0x0000000008000710                . = ALIGN (0x4)
+                0x0000000008000710                __exidx_start = .
  *(.ARM.exidx*)
-                0x00000000080005a0                __exidx_end = .
-                0x00000000080005a0                . = ALIGN (0x4)
+                0x0000000008000710                __exidx_end = .
+                0x0000000008000710                . = ALIGN (0x4)
 
-.preinit_array  0x00000000080005a0        0x0
-                0x00000000080005a0                . = ALIGN (0x4)
-                0x00000000080005a0                PROVIDE (__preinit_array_start = .)
+.preinit_array  0x0000000008000710        0x0
+                0x0000000008000710                . = ALIGN (0x4)
+                0x0000000008000710                PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x00000000080005a0                PROVIDE (__preinit_array_end = .)
-                0x00000000080005a0                . = ALIGN (0x4)
+                0x0000000008000710                PROVIDE (__preinit_array_end = .)
+                0x0000000008000710                . = ALIGN (0x4)
 
-.init_array     0x00000000080005a0        0x4
-                0x00000000080005a0                . = ALIGN (0x4)
-                0x00000000080005a0                PROVIDE (__init_array_start = .)
+.init_array     0x0000000008000710        0x4
+                0x0000000008000710                . = ALIGN (0x4)
+                0x0000000008000710                PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x00000000080005a0        0x4 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtbegin.o
-                0x00000000080005a4                PROVIDE (__init_array_end = .)
-                0x00000000080005a4                . = ALIGN (0x4)
+ .init_array    0x0000000008000710        0x4 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtbegin.o
+                0x0000000008000714                PROVIDE (__init_array_end = .)
+                0x0000000008000714                . = ALIGN (0x4)
 
-.fini_array     0x00000000080005a4        0x4
-                0x00000000080005a4                . = ALIGN (0x4)
+.fini_array     0x0000000008000714        0x4
+                0x0000000008000714                . = ALIGN (0x4)
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x00000000080005a4        0x4 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtbegin.o
+ .fini_array    0x0000000008000714        0x4 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x00000000080005a8                . = ALIGN (0x4)
-                0x00000000080005a8                _sidata = LOADADDR (.data)
+                0x0000000008000718                . = ALIGN (0x4)
+                0x0000000008000718                _sidata = LOADADDR (.data)
 
-.data           0x0000000020000000        0x0 load address 0x00000000080005a8
+.data           0x0000000020000000        0x0 load address 0x0000000008000718
                 0x0000000020000000                . = ALIGN (0x4)
                 0x0000000020000000                _sdata = .
  *(.data)
@@ -593,12 +624,12 @@ LOAD c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.ext
  *(.RamFunc*)
                 0x0000000020000000                . = ALIGN (0x4)
                 0x0000000020000000                _edata = .
-                0x00000000080005a8                _siccmram = LOADADDR (.ccmram)
+                0x0000000008000718                _siccmram = LOADADDR (.ccmram)
 
-.igot.plt       0x0000000020000000        0x0 load address 0x00000000080005a8
+.igot.plt       0x0000000020000000        0x0 load address 0x0000000008000718
  .igot.plt      0x0000000020000000        0x0 c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp/crtbegin.o
 
-.ccmram         0x0000000010000000        0x0 load address 0x00000000080005a8
+.ccmram         0x0000000010000000        0x0 load address 0x0000000008000718
                 0x0000000010000000                . = ALIGN (0x4)
                 0x0000000010000000                _sccmram = .
  *(.ccmram)
@@ -660,17 +691,17 @@ LOAD c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.ext
 LOAD c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp\libm.a
 LOAD c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m/nofp\libgcc.a
 
-.debug_info     0x0000000000000000      0x98c
+.debug_info     0x0000000000000000      0xab0
  .debug_info    0x0000000000000000      0x35d ./Src/LED_test.o
  .debug_info    0x000000000000035d       0x8e ./Src/main.o
  .debug_info    0x00000000000003eb       0x22 ./Startup/startup_stm32f407vgtx.o
- .debug_info    0x000000000000040d      0x57f ./drivers/src/stm32f407xx_gpio.o
+ .debug_info    0x000000000000040d      0x6a3 ./drivers/src/stm32f407xx_gpio.o
 
-.debug_abbrev   0x0000000000000000      0x32c
+.debug_abbrev   0x0000000000000000      0x366
  .debug_abbrev  0x0000000000000000      0x18e ./Src/LED_test.o
  .debug_abbrev  0x000000000000018e       0x5c ./Src/main.o
  .debug_abbrev  0x00000000000001ea       0x12 ./Startup/startup_stm32f407vgtx.o
- .debug_abbrev  0x00000000000001fc      0x130 ./drivers/src/stm32f407xx_gpio.o
+ .debug_abbrev  0x00000000000001fc      0x16a ./drivers/src/stm32f407xx_gpio.o
 
 .debug_aranges  0x0000000000000000       0xe8
  .debug_aranges
@@ -688,7 +719,7 @@ LOAD c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_ranges  0x0000000000000048       0x20 ./Startup/startup_stm32f407vgtx.o
  .debug_ranges  0x0000000000000068       0x48 ./drivers/src/stm32f407xx_gpio.o
 
-.debug_macro    0x0000000000000000     0x14c8
+.debug_macro    0x0000000000000000     0x14fc
  .debug_macro   0x0000000000000000       0x8b ./Src/LED_test.o
  .debug_macro   0x000000000000008b      0xa78 ./Src/LED_test.o
  .debug_macro   0x0000000000000b03       0x22 ./Src/LED_test.o
@@ -697,27 +728,27 @@ LOAD c:/st/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_macro   0x0000000000000c04      0x103 ./Src/LED_test.o
  .debug_macro   0x0000000000000d07       0x6a ./Src/LED_test.o
  .debug_macro   0x0000000000000d71      0x1df ./Src/LED_test.o
- .debug_macro   0x0000000000000f50      0x1fc ./Src/LED_test.o
- .debug_macro   0x000000000000114c       0x70 ./Src/LED_test.o
- .debug_macro   0x00000000000011bc       0x89 ./Src/main.o
- .debug_macro   0x0000000000001245      0x202 ./Src/main.o
- .debug_macro   0x0000000000001447       0x81 ./drivers/src/stm32f407xx_gpio.o
+ .debug_macro   0x0000000000000f50      0x20a ./Src/LED_test.o
+ .debug_macro   0x000000000000115a       0x88 ./Src/LED_test.o
+ .debug_macro   0x00000000000011e2       0x89 ./Src/main.o
+ .debug_macro   0x000000000000126b      0x210 ./Src/main.o
+ .debug_macro   0x000000000000147b       0x81 ./drivers/src/stm32f407xx_gpio.o
 
-.debug_line     0x0000000000000000      0xfe7
+.debug_line     0x0000000000000000     0x1106
  .debug_line    0x0000000000000000      0x4c7 ./Src/LED_test.o
  .debug_line    0x00000000000004c7      0x410 ./Src/main.o
  .debug_line    0x00000000000008d7       0x84 ./Startup/startup_stm32f407vgtx.o
- .debug_line    0x000000000000095b      0x68c ./drivers/src/stm32f407xx_gpio.o
+ .debug_line    0x000000000000095b      0x7ab ./drivers/src/stm32f407xx_gpio.o
 
-.debug_str      0x0000000000000000     0x4a7a
- .debug_str     0x0000000000000000     0x48ae ./Src/LED_test.o
-                                       0x4a1a (size before relaxing)
- .debug_str     0x00000000000048ae       0x13 ./Src/main.o
-                                       0x48c8 (size before relaxing)
- .debug_str     0x00000000000048c1       0x31 ./Startup/startup_stm32f407vgtx.o
+.debug_str      0x0000000000000000     0x4c11
+ .debug_str     0x0000000000000000     0x4994 ./Src/LED_test.o
+                                       0x4b00 (size before relaxing)
+ .debug_str     0x0000000000004994       0x13 ./Src/main.o
+                                       0x49ae (size before relaxing)
+ .debug_str     0x00000000000049a7       0x31 ./Startup/startup_stm32f407vgtx.o
                                          0x7d (size before relaxing)
- .debug_str     0x00000000000048f2      0x188 ./drivers/src/stm32f407xx_gpio.o
-                                       0x4b57 (size before relaxing)
+ .debug_str     0x00000000000049d8      0x239 ./drivers/src/stm32f407xx_gpio.o
+                                       0x4cee (size before relaxing)
 
 .comment        0x0000000000000000       0x50
  .comment       0x0000000000000000       0x50 ./Src/LED_test.o
