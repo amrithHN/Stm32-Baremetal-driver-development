@@ -183,19 +183,19 @@ typedef struct {
  */
 
 
-#define GPIOA_EN() (RCC->AHB2_ENR |=(1<<0))
-#define GPIOB_EN() (RCC->AHB2_ENR |=(1<<1))
-#define GPIOC_EN() RCC->AHB2_ENR |=(1<<2)
-#define GPIOD_EN() RCC->AHB2_ENR |=(1<<3)
-#define GPIOE_EN() RCC->AHB2_ENR |=(1<<4)
+#define GPIOA_EN() (RCC->AHB1_ENR |=(1<<0))
+#define GPIOB_EN() (RCC->AHB1_ENR |=(1<<1))
+#define GPIOC_EN() (RCC->AHB1_ENR |=(1<<2))
+#define GPIOD_EN() (RCC->AHB1_ENR |=(1<<3))
+#define GPIOE_EN() (RCC->AHB1_ENR |=(1<<4))
 
 
 
-#define GPIOA_DI() (RCC->AHB2_ENR &= ~(1<<0))
-#define GPIOB_DI() (RCC->AHB2_ENR &=~(1<<1))
-#define GPIOC_DI() (RCC->AHB2_ENR &=~(1<<2))
-#define GPIOD_DI() (RCC->AHB2_ENR &=~(1<<3))
-#define GPIOE_DI() (RCC->AHB2_ENR &=~(1<<4))
+#define GPIOA_DI() (RCC->AHB1_ENR &= ~(1<<0))
+#define GPIOB_DI() (RCC->AHB1_ENR &=~(1<<1))
+#define GPIOC_DI() (RCC->AHB1_ENR &=~(1<<2))
+#define GPIOD_DI() (RCC->AHB1_ENR &=~(1<<3))
+#define GPIOE_DI() (RCC->AHB1_ENR &=~(1<<4))
 
 /*
  * <Enable I2C using macros>
