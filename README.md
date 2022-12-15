@@ -7,7 +7,7 @@
 - [X] GPIO headers
 - [ ] UART
 - [ ] I2C
-- [ ] SPI
+- [X] SPI
 - [ ] Timers/counter
 - [ ] PWM
 - [ ] DMA
