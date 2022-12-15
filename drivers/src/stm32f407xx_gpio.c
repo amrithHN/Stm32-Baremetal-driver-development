@@ -97,21 +97,21 @@ void GPIO_init(GPIO_handle_t* pGPIO_handle){
 		if(pGPIO_handle->pin_config.pin_mode == INTERRUPT_FT)
 		{
 			//falling mode interrupt trigger , for each pin number 0-16 there is a exti line
-			EXTI->EXTI_FTSR |= (1<pGPIO_handle->pin_config.pin_number); // enable Falling edge
-			EXTI->EXTI_RTSR &= ~(1<pGPIO_handle->pin_config.pin_number); // disable rising edge
+			EXTI->EXTI_FTSR |= (1<<pGPIO_handle->pin_config.pin_number); // enable Falling edge
+			EXTI->EXTI_RTSR &= ~(1<<pGPIO_handle->pin_config.pin_number); // disable rising edge
 		}
 		else if(pGPIO_handle->pin_config.pin_mode == INTERRUPT_RT)
 		{
 			//rising edge interrupt trigger
-			EXTI->EXTI_RTSR |= (1<pGPIO_handle->pin_config.pin_number); // enable rising edge
-			EXTI->EXTI_FTSR &= ~(1<pGPIO_handle->pin_config.pin_number); // disable Falling edge
+			EXTI->EXTI_RTSR |= (1<<pGPIO_handle->pin_config.pin_number); // enable rising edge
+			EXTI->EXTI_FTSR &= ~(1<<pGPIO_handle->pin_config.pin_number); // disable Falling edge
 
 		}
 		else if (pGPIO_handle->pin_config.pin_mode == INTERRUPT_FRT)
 		{
 			//rising and falling edge interrupt trigger
-			EXTI->EXTI_RTSR |= (1<pGPIO_handle->pin_config.pin_number); // enable rising edge
-			EXTI->EXTI_FTSR |= (1<pGPIO_handle->pin_config.pin_number); // enable Falling edge
+			EXTI->EXTI_RTSR |= (1<<pGPIO_handle->pin_config.pin_number); // enable rising edge
+			EXTI->EXTI_FTSR |= (1<<pGPIO_handle->pin_config.pin_number); // enable Falling edge
 
 		}
 
@@ -213,16 +213,68 @@ void GPIO_toggle_pin(GPIO_Reg_Def* pGPIOx,uint8_t pin){
 
 
 
-void GPIO_IRQConfig(uint8_t IRQnumber,uint8_t IRQPriority,uint8_t flag){
+void GPIO_IRQConfig(uint8_t IRQnumber,uint8_t flag){
 
 	if(flag){
 
-		//enable interrupts processor side
+		//enable interrupts processor side using ISER0-4
+		if(IRQnumber<32)
+		{
+			//0-31 interupts in this ISER0 as given in programming manual 1:enable 0:No effect
+			*NVIC_ISER0 |= (1<<IRQnumber);
+		}
+		else if(IRQnumber>=32 && IRQnumber<=63)
+		{
+			*NVIC_ISER1 |=(1<<IRQnumber%32);
+		}
+		else if(IRQnumber>=64 && IRQnumber<=95)
+		{
+			*NVIC_ISER2 |=(1<<IRQnumber%64);
+		}
+		else if(IRQnumber>=96 && IRQnumber<=127)
+		{
+			*NVIC_ISER3 |=(1<<IRQnumber%96);
+		}
 	}
-	else{
-
-		//disable interrupts processor side
+	else
+	{
+		//disable interrupts processor side using ICER0-4
+		if(IRQnumber<32)
+		{
+			//0-31 interupts in this ICER0 as given in programming manual 1:disable 0:No effect
+			*NVIC_ICER0 |= (1<<IRQnumber);
+		}
+		else if(IRQnumber>=32 && IRQnumber<=63)
+		{
+			*NVIC_ICER1 |=(1<<IRQnumber%32);
+		}
+		else if(IRQnumber>=64 && IRQnumber<=95)
+		{
+			*NVIC_ICER2 |=(1<<IRQnumber%64);
+		}
+		else if(IRQnumber>=96 && IRQnumber<=127)
+		{
+			*NVIC_ICER3 |=(1<<IRQnumber%96);
+		}
 	}
 
 
+}
+
+void GPIO_IRQPriority(uint8_t IRQ_number,uint8_t IRQ_priority){
+
+	uint8_t temp1 = IRQ_number/4;
+	uint8_t temp2 = IRQ_number%4;
+//only upper nibble is used lower nibble is discarded so shift the value
+	uint8_t shift_temp = (8*temp2 + 4) ; // so each shift is 12 times discarding upper nibble of priority and using lower nibble to upper nibble of IPRx register
+	*(NVIC_IPRx(temp1)) |= IRQ_priority<<shift_temp;
+
+}
+
+void IRQ_handling(uint8_t pin){
+
+	if(EXTI->EXTI_PR)
+	{
+		EXTI->EXTI_PR |=(1<<pin);
+	}
 }

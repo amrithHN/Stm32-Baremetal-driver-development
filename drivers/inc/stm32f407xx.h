@@ -108,6 +108,7 @@
  */
 
 #define __vo32_t volatile uint32_t
+#define __vo8_t volatile uint8_t
 
 typedef struct GPIO{
 	__vo32_t MODER;
@@ -303,6 +304,28 @@ typedef struct {
 }SYSCFG_handle_t;
 
 #define SYSCFG ((SYSCFG_handle_t*)SYSCFG_BASE_ADDR)
+
+
+
+/*
+ * <SPI reg definition and macros>
+ *
+ */
+
+
+typedef struct SPI{
+	__vo32_t CR1;
+	__vo32_t CR2;
+	__vo32_t SR;
+	__vo32_t DR;
+	__vo32_t CRCPR;
+	__vo32_t RXCRCR;
+	__vo32_t TXCRCR;
+	__vo32_t I2SCFGR;
+	__vo32_t I2SPR;
+
+}SPI_regdef_t;
+
 
 
 #endif /* INC_STM3F407XX_H_ */

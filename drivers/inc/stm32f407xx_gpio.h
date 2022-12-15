@@ -11,13 +11,33 @@
 #include "stm32f407xx.h"
 
 
+
+/*
+ * <NVIC : cotex m4 PROGRAMMING MANUAL page 210,208 >
+ *
+ */
+
+#define  NVIC_ISER0 ((volatile uint32_t*)0xE000E100)
+#define  NVIC_ISER1 ((volatile uint32_t*)0xE000E132)
+#define  NVIC_ISER2 ((volatile uint32_t*)0xE000E164)
+#define  NVIC_ISER3 ((volatile uint32_t*)0xE000E196)
+#define  NVIC_ISER4 ((volatile uint32_t*)0xE000E1C8)
+
+
+#define  NVIC_ICER0 ((volatile uint32_t*)0XE000E180)
+#define  NVIC_ICER1 ((volatile uint32_t*)0XE000E1B1)
+#define  NVIC_ICER2 ((volatile uint32_t*)0XE000E1E4)
+#define  NVIC_ICER3 ((volatile uint32_t*)0XE000E216)
+#define  NVIC_ICER4 ((volatile uint32_t*)0XE000E248)
+
+#define NVIC_IPR_BASE ((volatile uint32_t*)0xE000E400)
+#define NVIC_IPRx(x) ((volatile uint32_t*)NVIC_IPR_BASE+x)
+
+
 /*
  * <Each GPIO needs port and pin configured to work , enable it before use in API>
  *
  */
-
-
-
 typedef struct{
 	uint8_t pin_number;
 	uint8_t pin_mode;
@@ -70,6 +90,35 @@ typedef struct{
 						 (x == GPIOD)?3: \
 						 (x == GPIOE)?4:0)
 
+
+/*
+ * <EXTI IRQ number refer Interrupt table for priority and number page :372 >
+ *
+ */
+
+#define EXTI0 6
+#define EXTI1 7
+#define EXTI2 8
+#define EXTI3 9
+#define EXTI4 6
+#define EXTI9_5 23
+#define EXTI15_10 40
+
+/*
+ * <Priority for any IRQ is in the range of 0-15 as its a 4 bit value>
+ *
+ */
+
+#define EXTI_PRIORITY_0 0
+#define EXTI_PRIORITY_1 1
+#define EXTI_PRIORITY_2 2
+#define EXTI_PRIORITY_3 3
+#define EXTI_PRIORITY_4 4
+#define EXTI_PRIORITY_5 5
+#define EXTI_PRIORITY_6 6
+
+#define EXTI_PRIORITY_15 15
+
 /*
  * <GPIO APIs to control them>
  *
@@ -121,6 +170,10 @@ void GPIO_toggle_pin(GPIO_Reg_Def*,uint8_t pin);
 /*
  *  IRQ stuff
  */
+
+void GPIO_IRQConfig(uint8_t IRQnumber,uint8_t flag);
+void GPIO_IRQPriority(uint8_t IRQ_number,uint8_t IRQ_priority);
+void IRQ_handling(uint8_t pin);
 
 
 #endif /* INC_STM32F407XX_GPIO_H_ */

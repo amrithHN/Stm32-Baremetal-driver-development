@@ -6,3 +6,6 @@
 ../drivers/src/stm32f407xx_gpio.c:191:6:GPIO_write_pin	16	static
 ../drivers/src/stm32f407xx_gpio.c:201:6:GPIO_write_port	16	static
 ../drivers/src/stm32f407xx_gpio.c:206:6:GPIO_toggle_pin	16	static
+../drivers/src/stm32f407xx_gpio.c:216:6:GPIO_IRQConfig	16	static
+../drivers/src/stm32f407xx_gpio.c:264:6:GPIO_IRQPriority	24	static
+../drivers/src/stm32f407xx_gpio.c:274:6:IRQ_handling	16	static
