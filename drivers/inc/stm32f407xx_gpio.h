@@ -18,17 +18,17 @@
  */
 
 #define  NVIC_ISER0 ((volatile uint32_t*)0xE000E100)
-#define  NVIC_ISER1 ((volatile uint32_t*)0xE000E132)
-#define  NVIC_ISER2 ((volatile uint32_t*)0xE000E164)
-#define  NVIC_ISER3 ((volatile uint32_t*)0xE000E196)
-#define  NVIC_ISER4 ((volatile uint32_t*)0xE000E1C8)
+#define  NVIC_ISER1 ((volatile uint32_t*)0xE000E104)
+#define  NVIC_ISER2 ((volatile uint32_t*)0xE000E108)
+#define  NVIC_ISER3 ((volatile uint32_t*)0xE000E10F)
+#define  NVIC_ISER4 ((volatile uint32_t*)0xE000E114)
 
 
 #define  NVIC_ICER0 ((volatile uint32_t*)0XE000E180)
-#define  NVIC_ICER1 ((volatile uint32_t*)0XE000E1B1)
-#define  NVIC_ICER2 ((volatile uint32_t*)0XE000E1E4)
-#define  NVIC_ICER3 ((volatile uint32_t*)0XE000E216)
-#define  NVIC_ICER4 ((volatile uint32_t*)0XE000E248)
+#define  NVIC_ICER1 ((volatile uint32_t*)0XE000E184)
+#define  NVIC_ICER2 ((volatile uint32_t*)0XE000E188)
+#define  NVIC_ICER3 ((volatile uint32_t*)0XE000E18C)
+#define  NVIC_ICER4 ((volatile uint32_t*)0XE000E190)
 
 #define NVIC_IPR_BASE ((volatile uint32_t*)0xE000E400)
 #define NVIC_IPRx(x) ((volatile uint32_t*)NVIC_IPR_BASE+x)

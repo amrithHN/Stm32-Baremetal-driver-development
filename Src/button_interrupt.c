@@ -5,7 +5,7 @@
  *      Author: amrith
  */
 
-#include "button_interrupt.h"
+
 #include <string.h>
 
 //output led with gpio handle for init
@@ -46,7 +46,7 @@ void delay(){
 
 uint8_t test=0;
 
-void led_test(){
+void main(){
 	// PD12,13,14,15 are leds PA0 is push button
 
 	GPIO_handle_t led ,button;

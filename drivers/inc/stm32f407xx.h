@@ -10,6 +10,10 @@
 
 #include <stdint.h>
 
+
+#define __vo32_t volatile uint32_t
+#define __vo8_t volatile uint8_t
+
 #define ENABLE 1
 #define DISABLE 0
 #define SET ENABLE
@@ -53,18 +57,18 @@
  * <I2C register address>
  *
  */
-#define I2C1_BASE_ADDR (APB1_BASE_ADDR + 0x5400)
-#define I2C2_BASE_ADDR (APB1_BASE_ADDR + 0x5800)
-#define I2C3_BASE_ADDR (APB1_BASE_ADDR + 0x5C00)
+#define I2C1 (APB1_BASE_ADDR + 0x5400)
+#define I2C2 (APB1_BASE_ADDR + 0x5800)
+#define I2C3 (APB1_BASE_ADDR + 0x5C00)
 
 
 /*
  * <SPI register address>
  *
  */
-#define SPI1_BASE_ADDR (APB2_BASE_ADDR + 0x3000)
-#define SPI2_BASE_ADDR (APB1_BASE_ADDR + 0x3800)
-#define SPI3_BASE_ADDR (APB1_BASE_ADDR + 0x3C00)
+#define SPI1 ((SPI_regdef_t*)(APB2_BASE_ADDR + 0x3000))
+#define SPI2 ((SPI_regdef_t*)(APB1_BASE_ADDR + 0x3800))
+#define SPI3 ((SPI_regdef_t*)(APB1_BASE_ADDR + 0x3C00))
 
 /*
  * <USART register address>
@@ -106,9 +110,6 @@
  * <GPIO REG definition page 287>
  *
  */
-
-#define __vo32_t volatile uint32_t
-#define __vo8_t volatile uint8_t
 
 typedef struct GPIO{
 	__vo32_t MODER;
@@ -326,6 +327,7 @@ typedef struct SPI{
 
 }SPI_regdef_t;
 
-
+#include "stm32f407xx_gpio.h"
+#include "stm32f407xx_spi.h"
 
 #endif /* INC_STM3F407XX_H_ */

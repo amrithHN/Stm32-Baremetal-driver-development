@@ -5,7 +5,7 @@
  *      Author: amrith
  */
 
-#include "LED_test.h"
+#include "stm32f407xx.h"
 
 
 //output led with gpio handle for init
@@ -44,7 +44,7 @@ void delay(){
 	for(uint32_t i=0;i<300000;i++);
 }
 
-void led_test(){
+void main(){
 	// PD12,13,14,15 are leds PA0 is push button
 
 	GPIO_handle_t led ,button;

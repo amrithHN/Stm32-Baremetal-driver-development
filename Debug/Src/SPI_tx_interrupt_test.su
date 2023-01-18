@@ -1,0 +1,4 @@
+../Src/SPI_tx_interrupt_test.c:20:6:Pin_init	24	static
+../Src/SPI_tx_interrupt_test.c:50:6:spi_conf	24	static
+../Src/SPI_tx_interrupt_test.c:75:5:main	8	static
+../Src/SPI_tx_interrupt_test.c:95:6:SPI2_IRQHandler	8	static

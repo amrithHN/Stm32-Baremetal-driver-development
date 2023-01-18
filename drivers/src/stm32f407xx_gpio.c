@@ -56,6 +56,8 @@ void GPIO_Enable(GPIO_Reg_Def* pGPIOx,uint8_t flag){
 void GPIO_init(GPIO_handle_t* pGPIO_handle){
 
 
+	GPIO_Enable(pGPIO_handle->pGPIOx,ENABLE);
+
 	if(pGPIO_handle->pin_config.pin_mode<=3)
 	{
 	//MODER
@@ -80,13 +82,14 @@ void GPIO_init(GPIO_handle_t* pGPIO_handle){
 		}
 
 	//Alternate function
-		if(pGPIO_handle->pin_config.pin_alternate_function == ALT_FUNC)
+		if(pGPIO_handle->pin_config.pin_mode == ALT_FUNC)
 		{
 
 				//less -- 0..7
 				uint32_t temp1 = pGPIO_handle->pin_config.pin_number/8;
 				uint32_t temp2 = pGPIO_handle->pin_config.pin_number%8;
-				pGPIO_handle->pGPIOx->AFR[temp1] = pGPIO_handle->pin_config.pin_alternate_function<<(4*temp2);
+				pGPIO_handle->pGPIOx->AFR[temp1] &= ~(0xF << ( 4 * temp2 ) );//clear
+				pGPIO_handle->pGPIOx->AFR[temp1] |= pGPIO_handle->pin_config.pin_alternate_function<<(4*temp2);
 
 
 
@@ -130,6 +133,8 @@ void GPIO_init(GPIO_handle_t* pGPIO_handle){
 
 
 	}
+
+
 
 }
 
@@ -225,7 +230,9 @@ void GPIO_IRQConfig(uint8_t IRQnumber,uint8_t flag){
 		}
 		else if(IRQnumber>=32 && IRQnumber<=63)
 		{
-			*NVIC_ISER1 |=(1<<IRQnumber%32);
+			uint32_t temp =(1<<IRQnumber%32);
+			*NVIC_ISER1 = temp;
+
 		}
 		else if(IRQnumber>=64 && IRQnumber<=95)
 		{
@@ -273,6 +280,7 @@ void GPIO_IRQPriority(uint8_t IRQ_number,uint8_t IRQ_priority){
 
 void IRQ_handling(uint8_t pin){
 
+	//set EXTI pending register to clear the pending interrupt flag else interrupt keeps triggering
 	if(EXTI->EXTI_PR)
 	{
 		EXTI->EXTI_PR |=(1<<pin);
